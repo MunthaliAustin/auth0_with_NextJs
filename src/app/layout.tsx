@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Nav from "@/components/nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body>{children}</body>
+        <body className="mt-5">
+          <Nav></Nav>
+          {children}
+        </body>
       </UserProvider>
     </html>
   );
